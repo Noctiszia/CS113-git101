@@ -1,0 +1,30 @@
+Week3
+Control Flow
+1. Statement and Blocks
+expression(นิพจน์) เมื่อปิดท้ายด้วย ; จะกลายเป็น statement(คำสั่ง)
+{} ใช้รวม declarations และ statements เป็น block
+ฟังก์ชัน, if, else, while, for มักใช้ block ในการรวม statement หลายอันเข้าด้วยกัน
+Null statement คือ statement ที่ไม่มี expression มีแค่ ;
+2. if-else
+ใช้ในการแยกกรณี การทำ statement ตาม expression
+else จะคู่กับ if ที่ใกล้สุด	  //กรณีที่เหลือ
+else if เหมือน if	    //ถ้า expression ไหนเป็นจริง statement จะทำงาน
+3. Switch
+ใช้ในการตรวจสอบเงื่อนไขในลักษณะดูว่า expression นั้นเท่ากับค่าคงที่ตัวใด     //ค่าคงที่เป็นจำนวนเต็ม
+โปรแกรมจะทำ statement ภายใต้ค่าคงที่นั้นจนกระทั่งเจอ break; แล้วจะหลุดจาก switch
+//default เป็น optional (มีหรือไม่มีก็ได้) จะทำงานเมื่อ expression ไม่เข้ากับ case ไหนเลย
+4. Loops
+while ถ้า expression เป็นจริง statement จะทำงานจนกว่า expression จะเป็นเท็จ
+while(expression){
+statement
+}
+for
+for(expression1; expression2; expression3)
+	statement
+โดยทั่วไป expression1 และ expression3  กำหนดค่าหรือเรียกใช้ฟังก์ชัน ส่วน expression2 เป็นตัวเปรียบเทียบ  //แต่ละส่วนถูกละได้ แต่ห้ามละ ; 
+do-while
+expression จะอยู่ล่าง statement
+statement จะถูกทำงาน expression จะถูกหาค่าว่าเป็นจริงหรือเท็จเรื่อย ๆ จนกว่า expression จะเป็นเท็จ
+5. Break และ Continue
+break จะบังคับให้โปรแกรมออกจาก loops ทันที
+continue จะทำให้เกิดการวนลูปขึ้นมาใหม่  //while กับ do-while จะเริ่มที่ expression for จะเริ่มที่ expression3 แล้วตรวจสอบ expression2
