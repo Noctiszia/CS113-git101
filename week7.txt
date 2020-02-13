@@ -1,0 +1,31 @@
+Week7
+ภาษา c สามารถเข้าถึงและจัดการหน่วยความจำได้โดยตรงโดยใช้ pointer
+//pointer เก็บค่า address ในหน่วยความจำ  
+//ใช้ %p ในการแสดง address
+Operators
+&   // ใช้หาค่าตำแหน่งในหน่วยความจำของ operand
+*    // ใช้เข้าถึงข้อมูลที่ถูกอ้างอิงตำแหน่งใน memory ที่มีค่าเป็น operand 
+เช่น 
+#include <stdio.h> 
+int main (){
+ int x = 5; 
+int *ptr_x = &x;
+ printf("%p", ptr_x);
+ printf("%d", *ptr_x);
+ return 0;
+ }
+//ใช้ * ซ้ำได้ เช่น  int **ptr_ptr_x = &ptr_x; เป็นการเชื่อม pointer กับ pointer
+scanf()
+รับข้อมูลเข้ามาผ่าน standard input
+// สามารถใช้ร่วมกับ array ได้  โดยเก็บข้อมูลมากกว่า 1 ค่าไว้ในตัวแปรเดียวได้
+//โดยปรกติจะส่งผ่านค่าพารามิเตอร์ไปยังฟังก์ชันโดย pass by value  แต่ถ้าใช้ pointer จะสามารถส่งค่าแบบ
+pass by reference ได้
+pointer  สามารถเป็น operand ให้ expressions ได้   //ไม่ใช่ว่าจะใช้ร่วมกับทุกตัวดำเนินการได้ทั้งหมด
+// &*ptr กับ *&ptr ไม่เหมือน
+malloc()
+int *data;
+       data = (int *)malloc(10 * sizeof(int));
+พารามิเตอร์ของ mallocจะเป็นจำนวนไบท์ในการจองพื้นที่
+free()
+free(data);
+ใช้ free จะเป็นตำแหน่งใน memory ที่อยากคืนให้ระบบ
