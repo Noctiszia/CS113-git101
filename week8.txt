@@ -1,0 +1,76 @@
+Week8
+Linked list เป็นโครงสร้างข้อมูลที่ถูกส่งมาเก็บข้อมูล 
+//ข้อมูลแต่ละตัวจะเชื่อมต่อกันเป็นสายเหมือนขบวนรถไฟ เพื่อให้สามารถเข้าถึงข้อมูลแต่ละตัวได้
+//สะดวกและนิยมกว่า arrays
+
+Structure
+struct เป็นการกำหนดรูปแบบหรือ โครงสร้างที่รวบรวมข้อมูลที่สัมพันธ์กันไว้ด้วยกัน
+เช่น
+struct  student{
+    char  id[13];
+    char name[50];
+    char  faculty[100];
+    int  age;
+};
+//สามารถประกาศ  struct  student  std; ได้ โดยที่ std เป้นตัวแปรที่มีโครงสร้างตาม struct  student
+//ใช้ dot operator (.)  ในการเข้าถึง สมาชิกแต่ละฟิลด์ของ structure
+เช่น
+printf(“%s\n”, std.name);
+std.age = 18;
+
+typedef
+สามารถใช้ typedef กำหนดประเภทข้อมูลขึ้นมาเพิ่มเติมได้
+เช่น 
+typedef  struct  student{
+    char  id[13];
+    char name[50];
+    char  faculty[100];
+    int  age;
+}Student;
+หรือ 
+typedef  struct{
+    char  id[13];
+    char name[50];
+    char  faculty[100];
+    int  age;
+}Student;
+
+//เรามักใช้คำว่า “node” ในการอ้างถึงหน่วยหรือโหนดที่ออกมาเพื่อเก็บข้อมุล 1 หน่วย
+เก็บข้อมูลเท่าไหร่จะใช้ node เท่านั้น
+Node จะมี 2 ส่วน คือ
+ส่วนที่เก็บ data อีกส่วนจะเป็น pointer ที่จะโยงไปหา node ถัดไปใน linked list 
+// NULL = ว่าง
+
+ตัวอย่างโปรแกรมของอาจารย์ชาคริต
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct node {
+int data;
+struct node *next;
+};
+
+int main(){ 
+  struct node *head = NULL;
+  struct node *first = NULL;
+  struct node *second = NULL;
+  struct node *third = NULL;
+
+  first = (struct node *)malloc(sizeof(struct node));
+  second = (struct node *)malloc(sizeof(struct node));
+  third = (struct node *)malloc(sizeof(struct node));
+
+  head = first; first -> data = 17;
+  first -> next = second;
+  second -> data = 29;
+  second -> next = third;
+  third -> data = 93;
+  third -> next = NULL;
+}
+
+Git
+กิต ใช้ในการควบคุมเวอร์ชั่นของซอฟต์แวร์  โดยจะมีการเก็บประวัติทั้งหมด ทำให้สะดวกต่อการทำงาน
+//มี checkpoint สามารถเลือกได้ว่าต้องการเริ่มที่จุดไหน
+//ใช้ในการทำงานจริง
+//จำเป็นต้องใช้ให้เป็น
+//ทำการเป็นทีมก็ต้องใช้ 
