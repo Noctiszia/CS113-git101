@@ -1,0 +1,87 @@
+C structure
+
+struct card {  //card คือ Tag (เป็น optional)
+char *face;     // face เป็น Members
+char *suit;     // suit เป็น Members
+};
+// tag มีชื่อเดียว Members สามารถเป็นข้อมูลที่ต่างประเภทกันได้แต่ต้องคนละชื่อ
+##ตัวอย่างจากสไลด์
+struct employee {
+    char firstName[20];
+    char lastName[20];
+    unsigned int age;
+    char gender;
+    double hourlySalary;
+};
+struct employee employee1, employee2;
+struct employee employees[100];
+struct employee {
+    char firstName[20];
+    char lastName[20];
+    unsigned int age;
+    char gender;
+    double hourlySalary;
+} employee1, employee2, *employeePtr;
+
+// struct ไม่สามารถจำกัดตัวอย่างของตัวเองได้ เช่น
+struct employee2 {
+char firstName[20];
+char lastName[20];
+unsigned int age;
+char gender;
+double hourlySalary;
+struct employee2 person; // ERROR
+struct employee2 *ePtr; // pointer
+};
+// struct ไม่สามารถใช้ ==, != ในการเปรียบเทียบได้
+// คำ คือ standard memory มักใช้พื้นที่เก็บในคอมพิวเตอร์ 2 หรือ 4 ไบท์ 
+
+// ใช้ Array กับ struct ได้ เช่น
+ struct entry {
+   char fname [10] ;
+   char lname [12] ;
+   char phone [8] ;
+ } ;
+ struct entry list [1000];   //สร้าง 1000 list ที่เหมือนกัน 
+
+ // ใช้ pointer ชี้ struct ได้ 
+ ##ตัวอย่างจากสไลด์ของ อาจารย์อุษา
+
+struct part {
+    float price ;
+    char name [10] ;
+} ;
+struct part *p , thing;
+p = &thing;
+/* The following three statements are equivalent */
+thing.price = 50;
+(*p).price = 50; /* () around *p is needed */
+p -> price = 50;
+
+
+    thing.price   _____thing.name [ ]_____
+        |        /                        \
+        |       |                          |
+        V       V                          V
+    __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
+   |__|__|__|__|__|__|__|__|__|__|__|__|__|__|
+  ^                     _____
+  |------------------->|_____| p
+
+  // p คือ set ที่จะชี้ไปที่ ไบท์แรกของตัวแปร struct
+
+
+git
+//git สามารถมี branch ได้และแต่ละ branch สามารถ แตกต่างกันได้
+ใช้เมื่อทำงานหลายคนเป็นทีม
+ ##ขอบคุณครับ##
+
+    
+    
+
+
+
+
+
+
+
